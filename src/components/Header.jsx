@@ -1,11 +1,10 @@
-import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../Providers/AuthProvider";
+import useAuth from "../hooks/useAuth";
 
 
 const Header = () => {
 
-    const { user, logOut } = useContext(AuthContext);
+    const { user, logOut } = useAuth();
 
     const handleLogOut = () => {
         logOut()

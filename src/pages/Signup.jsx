@@ -1,15 +1,15 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaEyeSlash } from "react-icons/fa";
 import { FaEye } from "react-icons/fa";
-import { AuthContext } from "../Providers/AuthProvider";
+import useAuth from "../hooks/useAuth";
 
 
 const Signup = () => {
 
     const [signupError, setSignupError] = useState('');
     const [showPassword, setShowPassword] = useState(false);
-    const { createUser } = useContext(AuthContext);
+    const { createUser } = useAuth();
     const navigate = useNavigate();
 
     const handleSignup = e => {

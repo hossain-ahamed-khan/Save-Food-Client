@@ -4,7 +4,7 @@ const FeaturedFoodCard = ({ food }) => {
     const { _id, food_name, food_img, donator_name, donator_img, food_quantity, pickup_location, expire_date, additional_notes } = food;
     return (
         <div className="card max-w-lg shadow-xl">
-            <figure><img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
+            <figure><img src={food_img} alt="Shoes" /></figure>
             <div className="card-body">
                 <h2 className="card-title">
                     {food_name}

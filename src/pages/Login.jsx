@@ -1,8 +1,8 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaEyeSlash } from "react-icons/fa";
 import { FaEye } from "react-icons/fa";
-import { AuthContext } from "../Providers/AuthProvider";
+import useAuth from "../hooks/useAuth";
 
 
 const Login = () => {
@@ -10,7 +10,7 @@ const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [loginError, setLoginError] = useState('');
 
-    const { signIn, signInWithGoogle, signInWithGithub } = useContext(AuthContext);
+    const { signIn, signInWithGoogle, signInWithGithub } = useAuth();
     const navigate = useNavigate();
 
     const handleLogin = e => {
