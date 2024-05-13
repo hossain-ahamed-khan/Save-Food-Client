@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 const FeaturedFoodCard = ({ food }) => {
 
@@ -8,12 +9,17 @@ const FeaturedFoodCard = ({ food }) => {
             <div className="card-body">
                 <h2 className="card-title">
                     {food_name}
-                    <div className="badge badge-secondary">NEW</div>
+                    <div className="badge badge-secondary">For {food_quantity} person</div>
                 </h2>
-                <p>If a dog chews shoes whose shoes does he choose?</p>
-                <div className="card-actions justify-end">
-                    <div className="badge badge-outline">Fashion</div>
-                    <div className="badge badge-outline">Products</div>
+                <p>{additional_notes}</p>
+                <p>Expire Date: {expire_date}</p>
+                <p>Pickup Location: {pickup_location}</p>
+                <div className="card-actions justify-between">
+                    <div className="flex gap-3 items-center">
+                        <img className="w-10 h-10 rounded-full" src={donator_img} alt="" />
+                        <p>{donator_name}</p>
+                    </div>
+                    <Link> <button className="btn">View Detail</button></Link>
                 </div>
             </div>
         </div>
