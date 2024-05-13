@@ -32,7 +32,8 @@ const router = createBrowserRouter([
       },
       {
         path: "/available-foods",
-        element: <AvailableFoods></AvailableFoods>
+        element: <AvailableFoods></AvailableFoods>,
+        loader: () => fetch("https://save-food-server.vercel.app/foods")
       },
       {
         path: "/add-food",

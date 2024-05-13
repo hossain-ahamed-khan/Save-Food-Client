@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 
-const FeaturedFoodCard = ({ food }) => {
+const AvailableFoodCard = ({ food }) => {
 
     const { _id, food_name, food_img, donator_name, donator_img, food_quantity, pickup_location, expire_date, additional_notes } = food;
+
     return (
         <div className="card max-w-lg shadow-xl">
             <figure><img src={food_img} alt="Shoes" /></figure>
@@ -26,4 +27,4 @@ const FeaturedFoodCard = ({ food }) => {
     );
 };
 
-export default FeaturedFoodCard;
+export default AvailableFoodCard;

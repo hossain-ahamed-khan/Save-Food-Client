@@ -14,6 +14,7 @@ const FoodDetails = () => {
             })
     }, [id])
 
+
     return (
         <div>
             <div className="hero min-h-screen bg-base-200">
