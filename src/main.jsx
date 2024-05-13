@@ -15,6 +15,7 @@ import AvailableFoods from './pages/AvailableFoods';
 import AddFood from './pages/AddFood.jsx';
 import ManageMyFoods from './pages/ManageMyFoods.jsx';
 import MyFoodRequest from './pages/MyFoodRequest.jsx';
+import FoodDetails from './pages/FoodDetails.jsx';
 
 
 
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
       {
         path: "/add-food",
         element: <AddFood></AddFood>
+      },
+      {
+        path: "/food/:id",
+        element: <FoodDetails></FoodDetails>
       },
       {
         path: "/manage-my-foods",

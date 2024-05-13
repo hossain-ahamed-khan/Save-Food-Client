@@ -19,7 +19,7 @@ const FeaturedFoodCard = ({ food }) => {
                         <img className="w-10 h-10 rounded-full" src={donator_img} alt="" />
                         <p>{donator_name}</p>
                     </div>
-                    <Link> <button className="btn">View Detail</button></Link>
+                    <Link to={`food/${_id}`}> <button className="btn">View Detail</button></Link>
                 </div>
             </div>
         </div>
