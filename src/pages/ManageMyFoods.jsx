@@ -6,15 +6,15 @@ const ManageMyFoods = () => {
 
     const { user } = useAuth();
     const [myFoods, setMyFoods] = useState([]);
+    const [control, setControl] = useState(false);
 
     useEffect(() => {
         fetch(`https://save-food-server.vercel.app/my-foods/${user?.email}`)
             .then(res => res.json())
             .then(data => {
-                console.log(data);
                 setMyFoods(data);
             })
-    }, [user])
+    }, [user, control])
 
 
     return (
@@ -35,6 +35,8 @@ const ManageMyFoods = () => {
                             myFoods.map(myFood => <ManageMyFoodCard
                                 key={myFood._id}
                                 myFood={myFood}
+                                control={control}
+                                setControl={setControl}
                             ></ManageMyFoodCard>)
                         }
                     </tbody>
