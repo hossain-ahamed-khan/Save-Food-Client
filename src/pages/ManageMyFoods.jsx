@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import useAuth from "../hooks/useAuth";
+import ManageMyFoodCard from "../components/ManageMyFoodCard";
 
 const ManageMyFoods = () => {
 
     const { user } = useAuth();
-
     const [myFoods, setMyFoods] = useState([]);
 
     useEffect(() => {
@@ -19,7 +19,27 @@ const ManageMyFoods = () => {
 
     return (
         <div>
-            <h1>{myFoods.length}</h1>
+            <h1 className="text-4xl font-bold text-center my-10">My Added Foods</h1>
+            <div className="overflow-x-auto w-10/12 mx-auto">
+                <table className="table">
+                    {/* head */}
+                    <thead>
+                        <tr>
+                            <th className="pl-24">Food</th>
+                            <th>Donor Info</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            myFoods.map(myFood => <ManageMyFoodCard
+                                key={myFood._id}
+                                myFood={myFood}
+                            ></ManageMyFoodCard>)
+                        }
+                    </tbody>
+                </table>
+            </div>
         </div>
     );
 };

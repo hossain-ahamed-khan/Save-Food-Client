@@ -12,11 +12,11 @@ const AvailableFoodCard = ({ food }) => {
                     {food_name}
                     <div className="badge badge-secondary">For {food_quantity} person</div>
                 </h2>
-                <p>{additional_notes}</p>
-                <p>Expire Date: {expire_date}</p>
-                <p>Pickup Location: {pickup_location}</p>
+                <p className="my-2">{additional_notes}</p>
+                <p><span className="font-bold">Pickup Location:</span> {pickup_location}</p>
+                <p><span className="font-bold">Expire Date:</span> {expire_date}</p>
                 <div className="card-actions justify-between">
-                    <div className="flex gap-3 items-center">
+                    <div className="flex gap-3 items-center mt-2">
                         <img className="w-10 h-10 rounded-full" src={donator_img} alt="" />
                         <p>{donator_name}</p>
                     </div>

@@ -48,6 +48,7 @@ const AddFood = () => {
     }
     return (
         <div className="w-3/5 mx-auto my-8">
+            <h1 className="text-4xl font-bold text-center my-6">Add Food</h1>
             <form onSubmit={handleAddFood}>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
