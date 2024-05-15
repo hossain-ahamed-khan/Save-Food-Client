@@ -17,6 +17,7 @@ import ManageMyFoods from './pages/ManageMyFoods.jsx';
 import MyFoodRequest from './pages/MyFoodRequest.jsx';
 import FoodDetails from './pages/FoodDetails.jsx';
 import UpdateFoodCard from './components/UpdateFoodCard.jsx';
+import PrivateRoute from './routes/PrivateRoute.jsx';
 
 
 
@@ -38,23 +39,23 @@ const router = createBrowserRouter([
       },
       {
         path: "/add-food",
-        element: <AddFood></AddFood>
+        element: <PrivateRoute><AddFood></AddFood></PrivateRoute>
       },
       {
         path: "/food/:id",
-        element: <FoodDetails></FoodDetails>
+        element: <PrivateRoute><FoodDetails></FoodDetails></PrivateRoute>
       },
       {
         path: "/manage-my-foods",
-        element: <ManageMyFoods></ManageMyFoods>
+        element: <PrivateRoute><ManageMyFoods></ManageMyFoods></PrivateRoute>
       },
       {
         path: "/my-food-request",
-        element: <MyFoodRequest></MyFoodRequest>
+        element: <PrivateRoute><MyFoodRequest></MyFoodRequest></PrivateRoute>
       },
       {
         path: '/update-food/:id',
-        element: <UpdateFoodCard></UpdateFoodCard>,
+        element: <PrivateRoute><UpdateFoodCard></UpdateFoodCard></PrivateRoute>,
         loader: ({ params }) => fetch(`https://save-food-server.vercel.app/food/${params.id}`)
       },
       {

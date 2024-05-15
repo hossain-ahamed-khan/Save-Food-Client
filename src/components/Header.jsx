@@ -28,6 +28,7 @@ const Header = () => {
                             <li><Link to="/my-food-request">My Food Request</Link></li>
                         </ul>
                     </div>
+                    <img className="w-12 h-12 mr-2" src="https://i.ibb.co/RHYJy4P/339043-PA8-CZ6-38.jpg" alt="" />
                     <Link to="/" className="text-3xl font-bold text-[#ff8800]">Save Food</Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
