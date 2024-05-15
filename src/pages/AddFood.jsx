@@ -27,13 +27,14 @@ const AddFood = () => {
 
         // send data to the server 
 
-        fetch("https://save-food-server.vercel.app/add-food", {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(newFoodItem)
-        })
+        fetch("https://save-food-server.vercel.app/add-food", { credentials: 'include' },
+            {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(newFoodItem)
+            })
             .then(res => res.json())
             .then(data => {
                 if (data.insertedId) {

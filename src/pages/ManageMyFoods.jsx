@@ -1,20 +1,20 @@
 import { useEffect, useState } from "react";
 import useAuth from "../hooks/useAuth";
 import ManageMyFoodCard from "../components/ManageMyFoodCard";
+import useAxiosSecure from "../hooks/useAxiosSecure";
 
 const ManageMyFoods = () => {
 
     const { user } = useAuth();
     const [myFoods, setMyFoods] = useState([]);
     const [control, setControl] = useState(false);
+    const axiosSecure = useAxiosSecure();
 
     useEffect(() => {
-        fetch(`https://save-food-server.vercel.app/my-foods/${user?.email}`)
-            .then(res => res.json())
-            .then(data => {
-                setMyFoods(data);
-            })
-    }, [user, control])
+        axiosSecure.get(`/my-foods/${user?.email}`)
+            .then(res => setMyFoods(res.data))
+
+    }, [user, control, axiosSecure])
 
 
     return (

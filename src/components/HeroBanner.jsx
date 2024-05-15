@@ -7,8 +7,8 @@ const HeroBanner = () => {
                 <div className="hero-overlay bg-opacity-60 rounded-3xl"></div>
                 <div className="hero-content text-center text-neutral-content">
                     <div className="max-w-md">
-                        <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
-                        <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+                        <h1 className="mb-5 text-5xl font-bold">Save Your Food For Others</h1>
+                        <p className="mb-5">Whether you have extra food to give or are looking for a delicious home-cooked dish, ShareBite connects neighbors to reduce waste and foster community spirit.</p>
                         <Link to="/available-foods">
                             <button className="btn bg-[#ffa600] font-semibold">Available Foods</button>
                         </Link>

@@ -9,7 +9,7 @@ const FoodDetails = () => {
     const [food, setFood] = useState({});
 
     useEffect(() => {
-        fetch(`https://save-food-server.vercel.app/food/${id}`)
+        fetch(`https://save-food-server.vercel.app/food/${id}`, { credentials: 'include' })
             .then(res => res.json())
             .then(data => {
                 setFood(data);
@@ -38,13 +38,14 @@ const FoodDetails = () => {
 
         // send data to the server 
 
-        fetch("https://save-food-server.vercel.app/request-food", {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(requestFoodItem)
-        })
+        fetch("https://save-food-server.vercel.app/request-food", { credentials: 'include' },
+            {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(requestFoodItem)
+            })
             .then(res => res.json())
             .then(data => {
                 if (data.insertedId) {

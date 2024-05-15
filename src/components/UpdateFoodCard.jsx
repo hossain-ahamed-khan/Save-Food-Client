@@ -34,13 +34,14 @@ const UpdateFoodCard = () => {
 
         // send data to the server 
 
-        fetch(`https://save-food-server.vercel.app/update-food/${_id}`, {
-            method: 'PUT',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(updatedFood)
-        })
+        fetch(`https://save-food-server.vercel.app/update-food/${_id}`, { credentials: 'include' },
+            {
+                method: 'PUT',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(updatedFood)
+            })
             .then(res => res.json())
             .then(data => {
                 if (data.modifiedCount > 0) {
