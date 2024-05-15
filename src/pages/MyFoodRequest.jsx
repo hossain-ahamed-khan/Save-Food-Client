@@ -1,9 +1,19 @@
-import { useLoaderData } from "react-router-dom";
+import { useEffect, useState } from "react";
 import MyFoodRequestCard from "../components/MyFoodRequestCard";
+import useAuth from "../hooks/useAuth";
 
 const MyFoodRequest = () => {
 
-    const requestedFoods = useLoaderData();
+    const { user } = useAuth();
+    const [myFoods, setMyFoods] = useState([]);
+
+    useEffect(() => {
+        fetch(`https://save-food-server.vercel.app/requested-foods/${user?.email}`)
+            .then(res => res.json())
+            .then(data => {
+                setMyFoods(data);
+            })
+    }, [user])
 
     return (
         <div>
@@ -20,9 +30,9 @@ const MyFoodRequest = () => {
                     </thead>
                     <tbody>
                         {
-                            requestedFoods.map(requestedFood => <MyFoodRequestCard
-                                key={requestedFood._id}
-                                requestedFood={requestedFood}
+                            myFoods.map(food => <MyFoodRequestCard
+                                key={food._id}
+                                food={food}
                             ></MyFoodRequestCard>)
                         }
                     </tbody>

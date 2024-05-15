@@ -22,19 +22,18 @@ const FoodDetails = () => {
 
         const food_name = form.foodName.value;
         const food_img = form.foodImg.value;
-        const donator_name = form.donatorName.value;
-        const donator_img = form.donatorImg.value;
         const food_quantity = form.foodQuantity.value;
         const pickup_location = form.pickupLocation.value;
         const expire_date = form.expireDate.value;
-        const additional_notes = form.additionalNote.value;
-        const donator_email = form.donatorEmail.value;
         const food_status = "requested";
+        const additional_notes = form.additionalNote.value;
+        const donator_name = form.donatorName.value;
+        const donator_email = form.donatorEmail.value;
+        const user_email = form.userEmail.value;
 
         const requestFoodItem = {
-            food_name, food_img, donator_name, donator_img,
-            food_quantity, pickup_location, expire_date, additional_notes,
-            donator_email, food_status
+            food_name, food_img, food_quantity, pickup_location, expire_date, food_status,
+            additional_notes, donator_name, donator_email, user_email
         };
 
         // send data to the server 
@@ -168,21 +167,21 @@ const FoodDetails = () => {
                                                     <div className="label">
                                                         <span className="label-text">Donator Name</span>
                                                     </div>
-                                                    <input type="text" name="donatorName" defaultValue={user?.displayName} className="input input-bordered w-full " disabled />
-                                                </label>
-
-                                                <label className="form-control w-full">
-                                                    <div className="label">
-                                                        <span className="label-text">Donator Image</span>
-                                                    </div>
-                                                    <input type="text" name="donatorImg" defaultValue={user?.photoURL} className="input input-bordered w-full " disabled />
+                                                    <input type="text" name="donatorName" defaultValue={food.donator_name} className="input input-bordered w-full " disabled />
                                                 </label>
 
                                                 <label className="form-control w-full">
                                                     <div className="label">
                                                         <span className="label-text">Donator Email</span>
                                                     </div>
-                                                    <input type="email" name="donatorEmail" defaultValue={user?.email} className="input input-bordered w-full " disabled />
+                                                    <input type="text" name="donatorEmail" defaultValue={food.donator_email} className="input input-bordered w-full " disabled />
+                                                </label>
+
+                                                <label className="form-control w-full">
+                                                    <div className="label">
+                                                        <span className="label-text">User Email</span>
+                                                    </div>
+                                                    <input type="email" name="userEmail" defaultValue={user?.email} className="input input-bordered w-full " disabled />
                                                 </label>
 
                                             </div>

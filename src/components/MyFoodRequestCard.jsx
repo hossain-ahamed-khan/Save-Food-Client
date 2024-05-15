@@ -1,9 +1,9 @@
 
-const MyFoodRequestCard = ({ requestedFood }) => {
+const MyFoodRequestCard = ({ food }) => {
 
     const { food_name, food_img, donator_name,
         food_quantity, pickup_location, expire_date,
-        donator_email, food_status } = requestedFood;
+        donator_email, food_status } = food;
 
     return (
         <tr>
@@ -23,7 +23,7 @@ const MyFoodRequestCard = ({ requestedFood }) => {
             <td>
                 {donator_name}
                 <br />
-                <span className="badge badge-ghost badge-sm">{donator_email}</span>
+                <span className="badge badge-ghost badge-md">{donator_email}</span>
             </td>
             <td>
                 <p><span className="font-bold">Pickup Location:</span> {pickup_location}</p>
