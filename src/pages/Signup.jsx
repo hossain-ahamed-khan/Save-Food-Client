@@ -111,12 +111,12 @@ const Signup = () => {
                         }
 
                         <div className="form-control mt-6">
-                            <button className="btn bg-[#803D3B] text-slate-100">Signup</button>
+                            <button className="btn bg-[#FF8800] font-bold">Signup</button>
                         </div>
                     </form>
 
                     <div className="text-center mb-8">
-                        Already have no account. Want to <Link className="font-bold text-[#803D3B]" to="/login">Login</Link>
+                        Already have no account. Want to <Link className="font-bold text-[#FF8800]" to="/login">Login</Link>
                     </div>
                 </div>
             </div>

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const HeroBanner = () => {
     return (
-        <div className="w-4/5 mx-auto my-6 h-[680px] rounded-3xl">
+        <div className="w-4/5 mx-auto my-6 h-[480px] md:h-[580px] lg:h-[680px] rounded-3xl">
             <div className="hero w-full h-full rounded-3xl" style={{ backgroundImage: 'url(https://i.ibb.co/60LhRXq/meat-cutlets.jpg)' }}>
                 <div className="hero-overlay bg-opacity-60 rounded-3xl"></div>
                 <div className="hero-content text-center text-neutral-content">

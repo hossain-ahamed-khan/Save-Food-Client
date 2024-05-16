@@ -2,7 +2,7 @@
 const WasteFoodSection = () => {
     return (
         <div className="my-28">
-            <h1 className="text-5xl font-bold text-center mb-14">One-third of food produced for human <br />consumption is wasted globally.</h1>
+            <h1 className="text-3xl lg:text-5xl font-bold text-center mb-14 w-4/5 lg:w-3/5 mx-auto">One-third of food produced for human consumption is wasted globally.</h1>
             <section className="p-4 lg:p-8">
                 <div className="container mx-auto space-y-12">
                     <div className="flex flex-col overflow-hidden rounded-md shadow-sm lg:flex-row">
