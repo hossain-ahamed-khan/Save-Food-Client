@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import MyFoodRequestCard from "../components/MyFoodRequestCard";
 import useAuth from "../hooks/useAuth";
+import axios from "axios";
 
 const MyFoodRequest = () => {
 
@@ -8,11 +9,17 @@ const MyFoodRequest = () => {
     const [myFoods, setMyFoods] = useState([]);
 
     useEffect(() => {
-        fetch(`https://save-food-server.vercel.app/requested-foods/${user?.email}`)
-            .then(res => res.json())
-            .then(data => {
-                setMyFoods(data);
+        // fetch(`https://save-food-server.vercel.app/requested-foods/${user?.email}`)
+        //     .then(res => res.json())
+        //     .then(data => {
+        //         setMyFoods(data);
+        //     })
+
+        axios.get(`https://save-food-server.vercel.app/requested-foods/${user?.email}`, { withCredentials: true })
+            .then(res => {
+                setMyFoods(res.data);
             })
+
     }, [user])
 
     return (
