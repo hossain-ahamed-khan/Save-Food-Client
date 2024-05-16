@@ -10,7 +10,7 @@ const MyFoodRequestCard = ({ food }) => {
             <td>
                 <div className="flex items-center gap-3">
                     <div className="avatar">
-                        <div className="mask mask-squircle w-52 h-24">
+                        <div className="mask mask-squire w-20 lg:w-52 h-14 lg:h-28 rounded-xl lg:rounded-3xl">
                             <img src={food_img} alt="Avatar Tailwind CSS Component" />
                         </div>
                     </div>

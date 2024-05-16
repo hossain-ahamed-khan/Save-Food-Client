@@ -26,7 +26,7 @@ const MyFoodRequest = () => {
     return (
         <div>
             <h1 className="text-4xl font-bold text-center my-10">My Requested Foods</h1>
-            <div className="overflow-x-auto w-10/12 mx-auto">
+            <div className="overflow-x-scroll lg:overflow-x-auto w-full lg:w-10/12 mx-auto">
                 <table className="table">
                     {/* head */}
                     <thead>

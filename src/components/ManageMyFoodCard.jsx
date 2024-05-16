@@ -45,9 +45,9 @@ const ManageMyFoodCard = ({ myFood, control, setControl }) => {
         <>
             <tr>
                 <td>
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-1 lg:gap-3">
                         <div className="avatar">
-                            <div className="mask mask-squircle w-52 h-24">
+                            <div className="mask mask-squire w-20 lg:w-52 h-14 lg:h-28 rounded-xl lg:rounded-3xl">
                                 <img src={food_img} alt="Avatar Tailwind CSS Component" />
                             </div>
                         </div>
@@ -67,7 +67,7 @@ const ManageMyFoodCard = ({ myFood, control, setControl }) => {
                     <p><span className="font-bold">Expire Date:</span> {expire_date}</p>
                     <p><span className="font-bold">Quantity:</span> {food_quantity}</p>
                 </td>
-                <th className="space-x-6 ">
+                <th className="space-x-1 lg:space-x-6">
                     <Link to={`/update-food/${_id}`}>
                         <button className="btn bg-[#ffa600b4]">Update</button>
                     </Link>
