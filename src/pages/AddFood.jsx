@@ -27,7 +27,7 @@ const AddFood = () => {
 
         // send data to the server 
 
-        fetch("https://save-food-server.vercel.app/add-food", { credentials: 'include' },
+        fetch("https://save-food-server.vercel.app/add-food",
             {
                 method: 'POST',
                 headers: {

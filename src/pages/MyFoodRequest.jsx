@@ -1,25 +1,19 @@
 import { useEffect, useState } from "react";
 import MyFoodRequestCard from "../components/MyFoodRequestCard";
 import useAuth from "../hooks/useAuth";
-import useAxiosSecure from "../hooks/useAxiosSecure";
 
 const MyFoodRequest = () => {
 
     const { user } = useAuth();
     const [myFoods, setMyFoods] = useState([]);
-    const axiosSecure = useAxiosSecure();
 
     useEffect(() => {
-        // fetch(`https://save-food-server.vercel.app/requested-foods/${user?.email}`, { credentials: 'include' })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         setMyFoods(data);
-        //     })
-
-        axiosSecure.get(`/requested-foods/${user?.email}`)
-            .then(res => setMyFoods(res.data))
-
-    }, [user, axiosSecure])
+        fetch(`https://save-food-server.vercel.app/requested-foods/${user?.email}`)
+            .then(res => res.json())
+            .then(data => {
+                setMyFoods(data);
+            })
+    }, [user])
 
     return (
         <div>

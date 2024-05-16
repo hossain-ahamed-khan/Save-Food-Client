@@ -22,7 +22,7 @@ const ManageMyFoodCard = ({ myFood, control, setControl }) => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`https://save-food-server.vercel.app/delete-food/${id}`, { credentials: 'include' },
+                fetch(`https://save-food-server.vercel.app/delete-food/${id}`,
                     {
                         method: "DELETE",
                     })
