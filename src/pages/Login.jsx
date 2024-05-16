@@ -42,8 +42,15 @@ const Login = () => {
 
     const handleGoogleSignIn = () => {
         signInWithGoogle()
-            .then(() => {
-                navigate("/");
+            .then((result) => {
+                const user = result.user.email;
+                axios.post('https://save-food-server.vercel.app/jwt', user, { withCredentials: true })
+                    .then(res => {
+                        console.log(res.data)
+                        if (res.data.success) {
+                            navigate("/");
+                        }
+                    })
             })
             .catch(error => {
                 console.log('error', error.message);
@@ -54,8 +61,15 @@ const Login = () => {
 
     const handleGithubSignIn = () => {
         signInWithGithub()
-            .then(() => {
-                navigate("/");
+            .then((result) => {
+                const user = result.user.email;
+                axios.post('https://save-food-server.vercel.app/jwt', user, { withCredentials: true })
+                    .then(res => {
+                        console.log(res.data)
+                        if (res.data.success) {
+                            navigate("/");
+                        }
+                    })
             })
             .catch(error => {
                 console.log('error', error.message);
