@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { FaEyeSlash } from "react-icons/fa";
 import { FaEye } from "react-icons/fa";
 import useAuth from "../hooks/useAuth";
+import axios from "axios";
 
 
 const Login = () => {
@@ -21,7 +22,15 @@ const Login = () => {
 
         signIn(email, password)
             .then(() => {
-                navigate("/");
+                const user = { email };
+
+                axios.post('https://save-food-server.vercel.app/jwt', user, { withCredentials: true })
+                    .then(res => {
+                        console.log(res.data)
+                        if (res.data.success) {
+                            navigate("/");
+                        }
+                    })
             })
             .catch(error => {
                 console.error(error);
