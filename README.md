@@ -1,8 +1,12 @@
-# React + Vite
+Website Name: Save Food
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Live Link: https://save-food-ba204.web.app/ 
 
-Currently, two official plugins are available:
+Website Features:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Add food item
+- Manage food items by updating and delete
+- Request food items from available foods
+- Private routes for logged-in users
+- Firebase authentications, google and GitHub login
+- JSON web token verification
